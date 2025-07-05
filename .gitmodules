@@ -1,0 +1,3 @@
+[submodule "source/rozdzial2"]
+	path = source/rozdzial2
+	url = https://github.com/Dominikapolchlopek/Przeglad.git
