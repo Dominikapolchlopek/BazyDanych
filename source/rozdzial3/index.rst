@@ -223,7 +223,7 @@ Zamówienie - Płatność
 * Płatność jest przypisana do jednego zamówienia
 
 Koszyk - Pozycja Koszyka
-############################3
+############################
 
 * Relacja: jeden do wielu (||--o{)
 * Koszyk może zawierać wiele pozycji
@@ -245,12 +245,12 @@ Druga Forma Normalna (2NF)
 * Usunięto częściową zależność atrybutów
 
 Trzecia Forma Normalna (3NF)
-#################################3
+#################################
 * Usunięto transatywne zależności
 * Każdy atrybut zależy tylko od klucza głównego
 
 Zalety Modelu
-##################3
+##################
 
 Integralność Danych
 #####################
@@ -394,28 +394,26 @@ SQLite
        FOREIGN KEY (id_uzytkownika) REFERENCES Uzytkownicy(id_uzytkownika)
    );
 
-.. list-table::
-   :widths: 25 25 50
-   :header-rows: 1
+Różnice w typach danych między PostgreSQL a SQLite
+####################################################
 
-   * - Aspekt
-     - PostgreSQL
-     - SQLite
-   * - Typ dla auto-incrementujących się kluczy
-     - SERIAL
-     - INTEGER PRIMARY KEY AUTOINCREMENT
-   * - Typ dla tekstu
-     - VARCHAR(255)
-     - TEXT
-   * - Typ dla liczb dziesiętnych
-     - DECIMAL(10, 2)
-     - REAL
-   * - Typ dla dat i czasu
-     - TIMESTAMP
-     - DATETIME
-   * - Typ dla danych JSON
-     - JSONB
-     - TEXT
+**Typ dla autoinkrementujących się kluczy głównych**  
+   * W PostgreSQL do automatycznego nadawania wartości kluczom głównym stosuje się typ ``SERIAL``. W SQLite tę funkcję pełni ``INTEGER PRIMARY KEY AUTOINCREMENT``.
+
+**Typ dla tekstu**  
+   * W PostgreSQL najczęściej używa się typu ``VARCHAR(255)`` (lub innego limitu długości) do przechowywania tekstu o ograniczonej długości. W SQLite stosuje się po prostu typ ``TEXT``, który nie ma ograniczenia długości.
+
+**Typ dla liczb dziesiętnych**  
+   * W PostgreSQL do precyzyjnych liczb dziesiętnych (np. ceny) wykorzystuje się typ ``DECIMAL(10, 2)``, który pozwala określić liczbę cyfr i miejsc po przecinku. W SQLite do tego celu używa się typu ``REAL``, przechowującego liczby zmiennoprzecinkowe.
+
+**Typ dla dat i czasu**  
+   * W PostgreSQL do przechowywania dat i czasu służy typ ``TIMESTAMP``. W SQLite używa się typu ``DATETIME``.
+
+**Typ dla danych JSON**  
+   * W PostgreSQL dostępny jest typ ``JSONB``, pozwalający na przechowywanie i indeksowanie danych w formacie JSON. W SQLite nie ma natywnego typu JSON, więc dane w tym formacie przechowuje się w kolumnie typu ``TEXT``.
+
+Podsumowując, PostgreSQL oferuje bardziej rozbudowane i precyzyjne typy danych, natomiast SQLite korzysta z prostszych, ogólnych typów, takich jak ``TEXT`` czy ``REAL``. Dla danych złożonych, takich jak JSON, PostgreSQL zapewnia natywne wsparcie, a w SQLite takie dane przechowuje się jako zwykły tekst.
+
 
 Skrypty i zapytania
 ---------------------
