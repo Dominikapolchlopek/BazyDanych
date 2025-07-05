@@ -526,7 +526,7 @@ PostgreSQL
            """Tworzy kopię zapasową bazy danych"""
            try:
                conn = self._get_connection()
-               with open("student23db_backup.sql", "w", encoding='utf-8') as f:
+               with open("student18db_backup.sql", "w", encoding='utf-8') as f:
                    conn.backup(f)
                print("Kopia zapasowa została utworzona")
            except Exception as e:
@@ -539,7 +539,7 @@ PostgreSQL
            """Przywraca bazę danych z kopii zapasowej"""
            try:
                conn = self._get_connection()
-               with open("student23db_backup.sql", "r", encoding='utf-8') as f:
+               with open("student18db_backup.sql", "r", encoding='utf-8') as f:
                    conn.restore(f)
                print("Baza danych została przywrócona")
            except Exception as e:
