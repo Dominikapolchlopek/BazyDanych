@@ -25,7 +25,7 @@ W diagramie użyto następującej notacji:
    * ||--|{ oznacza relację "jeden do wielu" z obowiązkowym wystąpieniem
 
 Użytkownik (Klient)
-######################
+#####################
 Definicja: Osoba korzystająca ze sklepu internetowego
 
 Atrybuty:
@@ -253,27 +253,27 @@ Zalety Modelu
 ##################3
 
 Integralność Danych
-#####################3
+#####################
 
 * Klucze obce zapewniają spójność danych
 * Unikalne identyfikatory uniemożliwiają duplikaty
 * Kontrola typów danych zapobiega nieprawidłowym wartościom
 
 Efektywność
-############33
+############
 * Optymalna struktura dla częstych operacji
 * Możliwość efektywnego indeksowania
 * Łatwa rozszerzalność systemu
 
 Bezpieczeństwo
-###################3
+###################
 
 * Hasła są przechowywane w sposób bezpieczny
 * Kontrola dostępu przez relacje
 * Możliwość dodania dodatkowych ograniczeń
 
 Rozszerzalność
-###################3
+###################
 
 * Łatwe dodawanie nowych encji
 * Możliwość rozszerzenia istniejących relacji
@@ -421,7 +421,7 @@ Skrypty i zapytania
 ---------------------
                                  
 PostgreSQL
-#################3
+#################
 
 .. code-block:: sql
    
